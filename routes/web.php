@@ -38,26 +38,23 @@ Route::resource('produto', ProductController::class)
 ->names('product')
 ->parameters(['produto' => 'product']);
 
-Route::resource('usuario', WarehouseProductController::class)
-    ->names('warehouse-product')
-    ->parameters(['usuario' => 'user']);
+Route::resource('almoxarifado/produto', WarehouseProductController::class)
+    ->names('warehouse.product')
+    ->parameters(['almoxarifado/produto' => 'warehouse/product']);
 
-Route::resource('usuario', MoveStatusController::class)
-->names('user')
-->parameters(['usuario' => 'user']);
+Route::resource('entrada', EntryController::class)
+->names('entry')
+->parameters(['entrada' => 'entry']);
 
-Route::resource('usuario', EntryController::class)
-->names('user')
-->parameters(['usuario' => 'user']);
+Route::resource('entrada/produto', EntryProductController::class)
+->names('entry.product')
+->parameters(['entry/product' => 'entry.product']);
 
-Route::resource('usuario', EntryProductController::class)
-->names('user')
-->parameters(['usuario' => 'user']);
+Route::resource('saida', OutputProductController::class)
+->names('output')
+->parameters(['saida' => 'output']);
 
-Route::resource('usuario', OutputController::class)
-->names('user')
-->parameters(['usuario' => 'user']);
 
-Route::resource('usuario', OutputProductController::class)
-->names('user')
-->parameters(['usuario' => 'user']);
+Route::resource('saida/produto', OutputProductController::class)
+->names('output.product')
+->parameters(['saida/produto' => 'output/product']);
