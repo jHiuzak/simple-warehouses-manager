@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('output_product', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('output_id')
+            ->constrained()
+            ->cascadeOnDelete();
+            $table->foreignId('warehouse_product_id')
+            ->constrained()
+            ->cascadeOnDelete();
+            $table->int('quantity');
             $table->timestamps();
         });
     }

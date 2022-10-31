@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('entry_product', function (Blueprint $table) {
+        Schema::create('products_measurement_units', function (Blueprint $table) {
             $table->id();
+            $table->string('product_measurement_unit');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('entry_product');
+        Schema::dropIfExists('product_measurement_units');
     }
 };
