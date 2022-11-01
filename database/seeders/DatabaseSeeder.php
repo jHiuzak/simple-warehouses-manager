@@ -4,6 +4,17 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Http\Models\{
+    WarehouseModels,
+    ProductMeasurementUnitModels,
+    ProductModels,
+    WarehouseProductModels,
+    MoveStatusModels,
+    EntryModels,
+    EntryProductModels,
+    OutputModels,
+    OutputProductModels
+};
 
 class DatabaseSeeder extends Seeder
 {
