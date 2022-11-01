@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class ProductMeasurementUnit extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'product_measurement_unit'
+    ];
 }

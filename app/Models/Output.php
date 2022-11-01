@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Output extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'move_status_id',
+        'control_code'
+    ];
 }
