@@ -1,15 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WarehouseController;
-use App\Http\Controllers\ProductMeasurementUnitController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\WarehouseProductController;
-use App\Http\Controllers\MoveStatusController;
-use App\Http\Controllers\EntryController;
-use App\Http\Controllers\EntryProductController;
-use App\Http\Controllers\OutputController;
-use App\Http\Controllers\OutputProductController;
+use App\Http\Controllers\{
+    WarehouseController,
+    ProductMeasurementUnitController,
+    ProductController,
+    WarehouseProductController,
+    MoveStatusController,
+    EntryController,
+    EntryProductController,
+    OutputController,
+    OutputProductController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -50,7 +52,7 @@ Route::resource('entrada/produto', EntryProductController::class)
 ->names('entry.product')
 ->parameters(['entry/product' => 'entry.product']);
 
-Route::resource('saida', OutputProductController::class)
+Route::resource('saida', OutputController::class)
 ->names('output')
 ->parameters(['saida' => 'output']);
 
