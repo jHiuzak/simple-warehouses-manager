@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_measurement_unit_id')
-            ->constrained()
+            ->constrained('products_measurement_units')
             ->cascadeOnDelete();
             $table->string('product');
             $table->string('control_code');

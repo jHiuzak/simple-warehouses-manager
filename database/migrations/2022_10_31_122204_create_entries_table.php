@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('status_id')
-            ->constrained()
+            $table->foreignId('move_status_id')
+            ->constrained('moves_statuses')
             ->cascadeOnDelete();
             $table->string('control_code');
             $table->timestamps();
