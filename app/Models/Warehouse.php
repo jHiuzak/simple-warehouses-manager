@@ -35,4 +35,9 @@ class Warehouse extends Model
 
         $control_code = setControlCode($control_code, $id, $warehouse_prefix);
     }
+
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'warehouses_products');
+    }
 }

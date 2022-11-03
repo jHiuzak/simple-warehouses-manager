@@ -14,4 +14,9 @@ class Product extends Model
         'product',
         'control_code'
     ];
+
+    public function product_measurement_unit()
+    {
+        return $this->hasMany(ProductMeasurementUnit::class, 'id', 'product_measurement_unit_id');
+    }
 }
