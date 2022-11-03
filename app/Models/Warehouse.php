@@ -40,4 +40,9 @@ class Warehouse extends Model
     {
         return $this->belongsToMany(Product::class, 'warehouses_products');
     }
+
+    public function entries()
+    {
+        return $this->hasMany(Entry::class);
+    }
 }
