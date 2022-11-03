@@ -12,4 +12,9 @@ class ProductMeasurementUnit extends Model
     protected $fillable = [
         'product_measurement_unit'
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }
