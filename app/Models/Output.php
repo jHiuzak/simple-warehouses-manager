@@ -13,4 +13,15 @@ class Output extends Model
         'move_status_id',
         'control_code'
     ];
+
+    private const prefix = 's';
+
+    public function setControlCodeAttribute()
+    {
+        $controlCode = $this->attributes['control_code'];
+        $id = $this->attributes['id'];
+        $prefix = $this->prefix;
+
+        $controlCode = setControlCode($controlCode, $id, $prefix);
+    }
 }

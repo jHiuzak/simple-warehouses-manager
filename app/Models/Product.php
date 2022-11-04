@@ -15,8 +15,29 @@ class Product extends Model
         'control_code'
     ];
 
-    public function product_measurement_unit()
+    private const prefix = 'p';
+
+    public function setControlCodeAttribute()
     {
-        return $this->hasMany(ProductMeasurementUnit::class, 'id', 'product_measurement_unit_id');
+        $controlCode = $this->attributes['control_code'];
+        $id = $this->attributes['id'];
+        $prefix = $this->prefix;
+
+        $controlCode = setControlCode($controlCode, $id, $prefix);
+    }
+
+    public function productMeasurementUnit()
+    {
+        return $this->belongsTo(ProductMeasurementUnit::class);
+    }
+
+    public function warehouses()
+    {
+        return $this->belongsToMany(Warehouse::class, 'warehouses');
+    }
+
+    public function entriesProducts()
+    {
+        return $this->hasMany(EntryProduct::class);
     }
 }

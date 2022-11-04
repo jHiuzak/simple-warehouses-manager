@@ -13,7 +13,7 @@ class Warehouse extends Model
         'warehouse',
     ];
 
-    private const warehouse_prefix = 'x';
+    private const prefix = 'x';
 
     //You may specify what you want to make not fillable instead of the contrary
     // protected $guarded = [
@@ -29,11 +29,11 @@ class Warehouse extends Model
 
     public function setControlCodeAttribute()
     {
-        $control_code = $this->attributes['control_code'];
+        $controlCode = $this->attributes['control_code'];
         $id = $this->attributes['id'];
-        $warehouse_prefix = $this->warehouse_prefix;
+        $prefix = $this->prefix;
 
-        $control_code = setControlCode($control_code, $id, $warehouse_prefix);
+        $controlCode = setControlCode($controlCode, $id, $prefix);
     }
 
     public function products()
